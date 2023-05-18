@@ -12,7 +12,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleOk = (data) => {
-    const editedFormData = users.map((user) => {
+    const editedUsersData = users.map((user) => {
       if (user.id === data.id) {
         return {
           ...user,
@@ -22,7 +22,7 @@ function App() {
         return user;
       }
     });
-    setUsers(editedFormData);
+    setUsers(editedUsersData);
     setIsModalOpen(false);
   };
 
