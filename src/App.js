@@ -27,6 +27,7 @@ function App() {
   };
 
   const handleCancel = () => {
+    setModalData([]);
     setIsModalOpen(false);
   };
 
@@ -60,26 +61,24 @@ function App() {
       {isLoading ? (
         <Spinner />
       ) : (
-        <>
-          <Row gutter={[25, 25]}>
-            {users.map((user) => (
-              <Col key={user.id} lg={6} sm={8} xs={24}>
-                <UserCard
-                  user={user}
-                  onEditClick={handleModalData}
-                  onDelete={handleDelete}
-                />
-              </Col>
-            ))}
-          </Row>
-          <CustomModal
-            isModalOpen={isModalOpen}
-            handleOk={handleOk}
-            handleCancel={handleCancel}
-            modalData={modalData}
-          />
-        </>
+        <Row gutter={[25, 25]}>
+          {users.map((user) => (
+            <Col key={user.id} lg={6} sm={8} xs={24}>
+              <UserCard
+                user={user}
+                onEditClick={handleModalData}
+                onDelete={handleDelete}
+              />
+            </Col>
+          ))}
+        </Row>
       )}
+      <CustomModal
+        isModalOpen={isModalOpen}
+        handleOk={handleOk}
+        handleCancel={handleCancel}
+        modalData={modalData}
+      />
     </div>
   );
 }
