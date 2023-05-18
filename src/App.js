@@ -3,7 +3,7 @@ import "./App.css";
 import UserCard from "./components/card/card";
 import { Col, Row } from "antd";
 import CustomModal from "./components/custom-modal/custom-modal";
-import Spinner from "./components/card/spinner/Spinner";
+import Spinner from "./components/spinner/Spinner";
 
 function App() {
   const [users, setUsers] = useState([]);
