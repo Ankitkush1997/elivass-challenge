@@ -5,13 +5,13 @@ import { useForm } from "antd/lib/form/Form";
 
 const CustomModal = ({ isModalOpen, handleCancel, handleOk, modalData }) => {
   const [form] = useForm();
+  const { id } = modalData;
+
+  const [formData, setFormData] = useState(modalData);
 
   useEffect(() => {
     form.setFieldsValue(modalData);
   }, [modalData, form]);
-
-  const { name, email, phone, website, id } = modalData;
-  const [formData, setFormData] = useState(modalData);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -36,7 +36,7 @@ const CustomModal = ({ isModalOpen, handleCancel, handleOk, modalData }) => {
             name="name"
             rules={[{ required: true, message: "This Field is required" }]}
           >
-            <Input name="name" value={name} onChange={handleChange} />
+            <Input name="name" onChange={handleChange} />
           </Form.Item>
           <Form.Item
             label="Email"
