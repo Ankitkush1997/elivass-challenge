@@ -66,7 +66,7 @@ const UserCard = ({ user, onEditClick, onDelete }) => {
       </div>
       <div className="base-card-meta">
         <GlobalOutlined />
-        <p>{website}</p>
+        <p>http://{website}</p>
       </div>
     </Card>
   );
