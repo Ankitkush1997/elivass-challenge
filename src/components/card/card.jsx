@@ -22,6 +22,7 @@ const UserCard = ({ user, onEditClick, onDelete }) => {
   return (
     <Card
       className="base-card"
+      hoverable
       cover={
         <img
           className="card-head-image"
@@ -32,23 +33,27 @@ const UserCard = ({ user, onEditClick, onDelete }) => {
       actions={[
         heartIcon ? (
           <HeartFilled
+            data-testid="heart-icon"
             key="heart"
             style={{ color: "red", fontSize: "20px" }}
             onClick={handleHeartClick}
           />
         ) : (
           <HeartOutlined
+            data-testid="heart-icon"
             key="heart"
             style={{ color: "red", fontSize: "20px" }}
             onClick={handleHeartClick}
           />
         ),
         <EditOutlined
+          data-testid="edit-icon"
           key="edit"
           style={{ fontSize: "18px" }}
           onClick={() => onEditClick(user)}
         />,
         <DeleteFilled
+          data-testid="delete-icon"
           key="ellipsis"
           style={{ fontSize: "18px" }}
           onClick={() => onDelete(user)}
